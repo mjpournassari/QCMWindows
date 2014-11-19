@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="95b67815-69be-4eb3-b56f-36d3bcc3dbb9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://77.36.163.186/qtv.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="qtv1.disco" MetadataType="Disco" ID="cb06211f-56b3-4065-a18b-d8905403a030" SourceId="1" SourceUrl="http://77.36.163.186/qtv.asmx?disco" />
+    <MetadataFile FileName="MyDB1.xsd" MetadataType="Schema" ID="e8f0d16f-fc84-4ad5-b52c-90ea73a88b12" SourceId="1" SourceUrl="http://77.36.163.186/qtv.asmx?schema=MyDB" />
+    <MetadataFile FileName="qtv1.wsdl" MetadataType="Wsdl" ID="66b01795-e912-48a8-aa49-77287eb21b7f" SourceId="1" SourceUrl="http://77.36.163.186/qtv.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

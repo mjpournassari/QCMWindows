@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/MyDB.xsd" />
+      <s:import schemaLocation="http://77.36.163.186/qtv.asmx?schema=MyDB" namespace="http://tempuri.org/MyDB.xsd" />
+      <s:element name="Province_Select_All">
+        <s:complexType />
+      </s:element>
+      <s:element name="Province_Select_AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Province_Select_AllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="PROVINCEDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cities_SelectByProvince">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProvinceId" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cities_SelectByProvinceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Cities_SelectByProvinceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="PROVINCEDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NCOCE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LAST_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FATHER_NAME" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PROVINCEID" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="CITYID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONEP_REFIX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CELLPHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_ACCOUNT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_BRANCH_CODE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_CARD_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DATETIME_REGISTER" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DATETIME_BIRTH" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SHCODE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Contact_InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectByNCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectByNCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contact_SelectByNCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="CONTACTSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Family" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contact_SelectResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="CONTACTSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NCOCE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LAST_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FATHER_NAME" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PROVINCEID" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="CITYID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONEP_REFIX" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CELLPHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_ACCOUNT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_BRANCH_CODE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BANK_CARD_NUMBER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DATETIME_BIRTH" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SHCODE" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Contact_UpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Programs_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="Programs_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Programs_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="PROGRAMSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Program_Options_SelectByPid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Prog_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Program_Options_SelectByPidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Program_Options_SelectByPidResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="PROGRAMS_OPTIONSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Option_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OptionId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Vote" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RowCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Option_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Contact_Option_InsertResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Options_Select">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Options_SelectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contact_Options_SelectResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="Contacts_OptionsDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectbyId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectbyIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contact_SelectbyIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="CONTACTSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Options_DeletebyId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_Options_DeletebyIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Contact_Options_DeletebyIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_DeletebyId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_DeletebyIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Contact_SelectOptionByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contact_SelectOptionByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contact_SelectOptionByCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="Contacts_OptionsDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Select_ContactByRowCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Select_ContactByRowCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Select_ContactByRowCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="CONTACTSDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoLettery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OptionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoLetteryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoLetteryResult" type="tns:ArrayOfLotteryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLotteryResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LotteryResult" nillable="true" type="tns:LotteryResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LotteryResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserMobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserNcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserRecordsCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Father_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Indx" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SelectLoLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectLoLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectLoLstResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MyDB.xsd" name="namespace" />
+                <s:attribute fixed="Lottery_ResultDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectLottery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectLotteryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectLotteryResult" type="tns:ArrayOfLotteryResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Province_Select_AllSoapIn">
+    <wsdl:part name="parameters" element="tns:Province_Select_All" />
+  </wsdl:message>
+  <wsdl:message name="Province_Select_AllSoapOut">
+    <wsdl:part name="parameters" element="tns:Province_Select_AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Cities_SelectByProvinceSoapIn">
+    <wsdl:part name="parameters" element="tns:Cities_SelectByProvince" />
+  </wsdl:message>
+  <wsdl:message name="Cities_SelectByProvinceSoapOut">
+    <wsdl:part name="parameters" element="tns:Cities_SelectByProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Contact_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectByNCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_SelectByNCode" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectByNCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_SelectByNCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Select" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Update" />
+  </wsdl:message>
+  <wsdl:message name="Contact_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Programs_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Programs_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="Programs_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Programs_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Program_Options_SelectByPidSoapIn">
+    <wsdl:part name="parameters" element="tns:Program_Options_SelectByPid" />
+  </wsdl:message>
+  <wsdl:message name="Program_Options_SelectByPidSoapOut">
+    <wsdl:part name="parameters" element="tns:Program_Options_SelectByPidResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Option_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Option_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Option_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_Option_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Options_SelectSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Options_Select" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Options_SelectSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_Options_SelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectbyIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_SelectbyId" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectbyIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_SelectbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Options_DeletebyIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_Options_DeletebyId" />
+  </wsdl:message>
+  <wsdl:message name="Contact_Options_DeletebyIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_Options_DeletebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_DeletebyIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_DeletebyId" />
+  </wsdl:message>
+  <wsdl:message name="Contact_DeletebyIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_DeletebyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectOptionByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Contact_SelectOptionByCode" />
+  </wsdl:message>
+  <wsdl:message name="Contact_SelectOptionByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Contact_SelectOptionByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Select_ContactByRowCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Select_ContactByRowCode" />
+  </wsdl:message>
+  <wsdl:message name="Select_ContactByRowCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Select_ContactByRowCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoLetterySoapIn">
+    <wsdl:part name="parameters" element="tns:DoLettery" />
+  </wsdl:message>
+  <wsdl:message name="DoLetterySoapOut">
+    <wsdl:part name="parameters" element="tns:DoLetteryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectLoLstSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectLoLst" />
+  </wsdl:message>
+  <wsdl:message name="SelectLoLstSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectLoLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectLotterySoapIn">
+    <wsdl:part name="parameters" element="tns:SelectLottery" />
+  </wsdl:message>
+  <wsdl:message name="SelectLotterySoapOut">
+    <wsdl:part name="parameters" element="tns:SelectLotteryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QTvSoap">
+    <wsdl:operation name="Province_Select_All">
+      <wsdl:input message="tns:Province_Select_AllSoapIn" />
+      <wsdl:output message="tns:Province_Select_AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cities_SelectByProvince">
+      <wsdl:input message="tns:Cities_SelectByProvinceSoapIn" />
+      <wsdl:output message="tns:Cities_SelectByProvinceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Insert">
+      <wsdl:input message="tns:Contact_InsertSoapIn" />
+      <wsdl:output message="tns:Contact_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectByNCode">
+      <wsdl:input message="tns:Contact_SelectByNCodeSoapIn" />
+      <wsdl:output message="tns:Contact_SelectByNCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Select">
+      <wsdl:input message="tns:Contact_SelectSoapIn" />
+      <wsdl:output message="tns:Contact_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Update">
+      <wsdl:input message="tns:Contact_UpdateSoapIn" />
+      <wsdl:output message="tns:Contact_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Programs_SelectAll">
+      <wsdl:input message="tns:Programs_SelectAllSoapIn" />
+      <wsdl:output message="tns:Programs_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Program_Options_SelectByPid">
+      <wsdl:input message="tns:Program_Options_SelectByPidSoapIn" />
+      <wsdl:output message="tns:Program_Options_SelectByPidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Option_Insert">
+      <wsdl:input message="tns:Contact_Option_InsertSoapIn" />
+      <wsdl:output message="tns:Contact_Option_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_Select">
+      <wsdl:input message="tns:Contact_Options_SelectSoapIn" />
+      <wsdl:output message="tns:Contact_Options_SelectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectbyId">
+      <wsdl:input message="tns:Contact_SelectbyIdSoapIn" />
+      <wsdl:output message="tns:Contact_SelectbyIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_DeletebyId">
+      <wsdl:input message="tns:Contact_Options_DeletebyIdSoapIn" />
+      <wsdl:output message="tns:Contact_Options_DeletebyIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_DeletebyId">
+      <wsdl:input message="tns:Contact_DeletebyIdSoapIn" />
+      <wsdl:output message="tns:Contact_DeletebyIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectOptionByCode">
+      <wsdl:input message="tns:Contact_SelectOptionByCodeSoapIn" />
+      <wsdl:output message="tns:Contact_SelectOptionByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Select_ContactByRowCode">
+      <wsdl:input message="tns:Select_ContactByRowCodeSoapIn" />
+      <wsdl:output message="tns:Select_ContactByRowCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoLettery">
+      <wsdl:input message="tns:DoLetterySoapIn" />
+      <wsdl:output message="tns:DoLetterySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoLst">
+      <wsdl:input message="tns:SelectLoLstSoapIn" />
+      <wsdl:output message="tns:SelectLoLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectLottery">
+      <wsdl:input message="tns:SelectLotterySoapIn" />
+      <wsdl:output message="tns:SelectLotterySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLo">
+      <wsdl:input message="tns:DeleteLoSoapIn" />
+      <wsdl:output message="tns:DeleteLoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QTvSoap" type="tns:QTvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Province_Select_All">
+      <soap:operation soapAction="http://tempuri.org/Province_Select_All" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cities_SelectByProvince">
+      <soap:operation soapAction="http://tempuri.org/Cities_SelectByProvince" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Insert">
+      <soap:operation soapAction="http://tempuri.org/Contact_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectByNCode">
+      <soap:operation soapAction="http://tempuri.org/Contact_SelectByNCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Select">
+      <soap:operation soapAction="http://tempuri.org/Contact_Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Update">
+      <soap:operation soapAction="http://tempuri.org/Contact_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Programs_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/Programs_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Program_Options_SelectByPid">
+      <soap:operation soapAction="http://tempuri.org/Program_Options_SelectByPid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Option_Insert">
+      <soap:operation soapAction="http://tempuri.org/Contact_Option_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_Select">
+      <soap:operation soapAction="http://tempuri.org/Contact_Options_Select" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectbyId">
+      <soap:operation soapAction="http://tempuri.org/Contact_SelectbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_DeletebyId">
+      <soap:operation soapAction="http://tempuri.org/Contact_Options_DeletebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_DeletebyId">
+      <soap:operation soapAction="http://tempuri.org/Contact_DeletebyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectOptionByCode">
+      <soap:operation soapAction="http://tempuri.org/Contact_SelectOptionByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_ContactByRowCode">
+      <soap:operation soapAction="http://tempuri.org/Select_ContactByRowCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoLettery">
+      <soap:operation soapAction="http://tempuri.org/DoLettery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoLst">
+      <soap:operation soapAction="http://tempuri.org/SelectLoLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLottery">
+      <soap:operation soapAction="http://tempuri.org/SelectLottery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLo">
+      <soap:operation soapAction="http://tempuri.org/DeleteLo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QTvSoap12" type="tns:QTvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Province_Select_All">
+      <soap12:operation soapAction="http://tempuri.org/Province_Select_All" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cities_SelectByProvince">
+      <soap12:operation soapAction="http://tempuri.org/Cities_SelectByProvince" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectByNCode">
+      <soap12:operation soapAction="http://tempuri.org/Contact_SelectByNCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Select">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Update">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Programs_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/Programs_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Program_Options_SelectByPid">
+      <soap12:operation soapAction="http://tempuri.org/Program_Options_SelectByPid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Option_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Option_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_Select">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Options_Select" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectbyId">
+      <soap12:operation soapAction="http://tempuri.org/Contact_SelectbyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_Options_DeletebyId">
+      <soap12:operation soapAction="http://tempuri.org/Contact_Options_DeletebyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_DeletebyId">
+      <soap12:operation soapAction="http://tempuri.org/Contact_DeletebyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contact_SelectOptionByCode">
+      <soap12:operation soapAction="http://tempuri.org/Contact_SelectOptionByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Select_ContactByRowCode">
+      <soap12:operation soapAction="http://tempuri.org/Select_ContactByRowCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoLettery">
+      <soap12:operation soapAction="http://tempuri.org/DoLettery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoLst">
+      <soap12:operation soapAction="http://tempuri.org/SelectLoLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLottery">
+      <soap12:operation soapAction="http://tempuri.org/SelectLottery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteLo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QTv">
+    <wsdl:port name="QTvSoap" binding="tns:QTvSoap">
+      <soap:address location="http://77.36.163.186/qtv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QTvSoap12" binding="tns:QTvSoap12">
+      <soap12:address location="http://77.36.163.186/qtv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
